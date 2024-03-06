@@ -19,7 +19,7 @@
     data() {
       return {
         sidebarItems: [
-          { name: "Dashboard", route: "/students", icon: "fas fa-tachometer-alt" },
+          { name: "Dashboard", route: "/dashboard", icon: "fas fa-tachometer-alt" },
           { name: "Profile", route: "/profile", icon: "fas fa-user" },
           { name: "Grades", route: "/grades", icon: "fas fa-graduation-cap" },
           { name: "Student", route: "/student/grades", icon: "fas fa-user-graduate" },

@@ -10,8 +10,15 @@
             </option>
           </select>
           <div class="overall-info">
-            <div>Overall GPA: {{ selectedStudentInfo.overall_gpa }}</div>
-            <div>Overall Grade Points: {{ selectedStudentInfo.overall_grade_points}}</div>
+            <div v-if="selectedStudentInfo">
+  <div>Overall GPA: {{ selectedStudent && parseFloat(selectedStudentInfo?.overall_gpa)?.toFixed(2) }}</div>
+  <div>
+    Overall Grade Points: {{ selectedStudent &&
+      parseFloat(selectedStudentInfo?.overall_grade_points)?.toFixed(2)
+    }}
+  </div>
+</div>
+
           </div>
         </div>
         <div v-if="loading" class="loading">Loading...</div>
@@ -82,7 +89,8 @@
           this.grades = response.data;
   
           // Fetch overall GPA and grade points for the selected student
-          const studentInfoResponse = await axios.get(`http://localhost:3000/student/${this.selectedStudent}`);
+        //   const studentInfoResponse = await axios.get(`http://localhost:3000/student/${this.selectedStudent}`);
+          const studentInfoResponse = await axios.get(`http://localhost:3000/student/${this.selectedStudent}/overall`);
           this.selectedStudentInfo = studentInfoResponse.data;
   
           this.loading = false;

@@ -36,7 +36,7 @@
               <td>
                 <ul class="instructors-list">
                   <li v-for="instructor in course.instructors" :key="instructor.instructor_id">
-                    {{ instructor.first_name.split('e')[0] }} {{ instructor.last_name }} - {{ instructor.email }}
+                    {{ instructor.first_name?.split('e')[0] }} {{ instructor.last_name }} - {{ instructor.email }}
                   </li>
                 </ul>
               </td>
