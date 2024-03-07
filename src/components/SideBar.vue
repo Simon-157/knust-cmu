@@ -20,11 +20,11 @@
       return {
         sidebarItems: [
           { name: "Dashboard", route: "/dashboard", icon: "fas fa-tachometer-alt" },
-          { name: "Profile", route: "/profile", icon: "fas fa-user" },
+          // { name: "Profile", route: "/profile", icon: "fas fa-user" },
           { name: "Grades", route: "/grades", icon: "fas fa-graduation-cap" },
           { name: "Student", route: "/student/grades", icon: "fas fa-user-graduate" },
           { name: "Courses", route: "/courses", icon: "fas fa-book" },
-          { name: "Instructors", route: "/instructors", icon: "fas fa-chalkboard-teacher" },
+          // { name: "Instructors", route: "/instructors", icon: "fas fa-chalkboard-teacher" },
         ],
       };
     },
