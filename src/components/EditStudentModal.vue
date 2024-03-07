@@ -63,6 +63,7 @@ export default {
           this.editedStudent
         );
         this.$emit("close");
+        location.reload();
       } catch (error) {
         console.log(error);
       }

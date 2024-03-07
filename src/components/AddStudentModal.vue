@@ -23,7 +23,6 @@
     </div>
   </div>x
 </template>
-
 <script>
 import axios from "axios";
 
@@ -46,6 +45,7 @@ export default {
       try {
         await axios.post("https://knust-cmu-api.onrender.com/students", this.newStudent);
         this.$emit("close");
+        location.reload(); // Add this line
       } catch (error) {
         console.log(error);
       }
