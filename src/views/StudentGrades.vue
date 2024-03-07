@@ -39,8 +39,8 @@
               <tr v-for="(grade, index) in grades" :key="index" :class="{'even-row': index % 2 === 0, 'odd-row': index % 2 !== 0}">
                 <td>{{ grade.course_code }}</td>
                 <td>{{ grade.course_name }}</td>
-                <td>{{ grade.grade_value }}</td>
-                <td>{{ grade.grade }}</td>
+                <td>{{ grade.grade_value ?? "-" }}</td>
+                <td>{{ grade.grade ?? "-" }}</td>
               </tr>
             </tbody>
           </table>
@@ -74,7 +74,7 @@
     methods: {
       async fetchStudents() {
         try {
-          const response = await axios.get("http://localhost:3000/students");
+          const response = await axios.get("https://knust-cmu-api.onrender.com/students");
           this.students = response.data;
         } catch (error) {
           this.error = error.message;
@@ -85,12 +85,10 @@
         if (!this.selectedStudent) return;
         this.loading = true;
         try {
-          const response = await axios.get(`http://localhost:3000/student/${this.selectedStudent}/grades`);
+          const response = await axios.get(`https://knust-cmu-api.onrender.com/student/${this.selectedStudent}/grades`);
           this.grades = response.data;
   
-          // Fetch overall GPA and grade points for the selected student
-        //   const studentInfoResponse = await axios.get(`http://localhost:3000/student/${this.selectedStudent}`);
-          const studentInfoResponse = await axios.get(`http://localhost:3000/student/${this.selectedStudent}/overall`);
+          const studentInfoResponse = await axios.get(`https://knust-cmu-api.onrender.com/student/${this.selectedStudent}/overall`);
           this.selectedStudentInfo = studentInfoResponse.data;
   
           this.loading = false;
@@ -105,7 +103,6 @@
   </script>
   
   <style scoped>
-  /* Add your custom styles here */
   .grades-view {
     display: flex;
     height: 100vh;

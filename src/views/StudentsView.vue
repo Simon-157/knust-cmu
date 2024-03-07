@@ -112,7 +112,7 @@ export default {
     async fetchStudents() {
       this.loading = true;
       try {
-        const response = await axios.get("http://localhost:3000/students");
+        const response = await axios.get("https://knust-cmu-api.onrender.com/students");
         this.students = response.data;
         this.loading = false;
       } catch (error) {
@@ -132,7 +132,7 @@ export default {
 
     async deleteStudent(student) {
       try {
-        await axios.delete(`http://localhost:3000/students/${student.student_id}`);
+        await axios.delete(`https://knust-cmu-api.onrender.com/students/${student.student_id}`);
         this.fetchStudents();
       } catch (error) {
         this.error = error.message;

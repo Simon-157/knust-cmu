@@ -27,7 +27,7 @@ export default {
     async fetchInstructors() {
       // Example: Make HTTP request using Axios
       try {
-        const response = await this.$http.get('/instructors');
+        const response = await this.$http.get('https://knust-cmu-api.onrender.com/instructors');
         this.instructors = response.data;
       } catch (error) {
         console.error('Error fetching instructors:', error);

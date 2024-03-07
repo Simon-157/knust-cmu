@@ -60,7 +60,7 @@ export default {
   methods: {
     async fetchCourses() {
       try {
-        const response = await axios.get("http://localhost:3000/courses");
+        const response = await axios.get("https://knust-cmu-api.onrender.com/courses");
         this.courses = response.data;
       } catch (error) {
         this.error = error.message;
@@ -71,7 +71,7 @@ export default {
       if (!this.selectedCourse) return;
       this.loading = true;
       try {
-        const response = await axios.get(`http://localhost:3000/course/${this.selectedCourse}/grades`);
+        const response = await axios.get(`https://knust-cmu-api.onrender.com/course/${this.selectedCourse}/grades`);
         this.grades = response.data;
         this.loading = false;
       } catch (error) {

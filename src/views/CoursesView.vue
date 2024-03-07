@@ -85,7 +85,7 @@ export default {
     async fetchCourses() {
       this.loading = true;
       try {
-        const response = await axios.get("http://localhost:3000/courses");
+        const response = await axios.get("https://knust-cmu-api.onrender.com/courses");
         this.courses = response.data;
         this.loading = false;
       } catch (error) {
