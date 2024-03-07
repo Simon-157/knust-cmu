@@ -59,7 +59,7 @@ export default {
     async submitForm() {
       try {
         await axios.patch(
-          `http://localhost:3000/students/${this.editedStudent.student_id}`,
+          `https://knust-cmu-api.onrender.com/students/${this.editedStudent.student_id}`,
           this.editedStudent
         );
         this.$emit("close");

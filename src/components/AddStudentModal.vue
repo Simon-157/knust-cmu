@@ -44,7 +44,7 @@ export default {
   methods: {
     async submitForm() {
       try {
-        await axios.post("http://localhost:3000/students", this.newStudent);
+        await axios.post("https://knust-cmu-api.onrender.com/students", this.newStudent);
         this.$emit("close");
       } catch (error) {
         console.log(error);
